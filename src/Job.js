@@ -5,7 +5,6 @@ module.exports = function (grunt) {
   var _ = require('lodash');
   var utils = require('./utils')(grunt);
   var reJobId = /^[a-z0-9]{32}$/;
-  var saucelabsHost = "eu-central-1.saucelabs.com";
 
   Q.longStackSupport = true;
 
