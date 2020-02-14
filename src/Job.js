@@ -65,7 +65,7 @@ module.exports = function (grunt) {
     var me = this;
     var requestParams = {
       method: 'POST',
-      url: ['https://" + saucelabsHost + "/rest/v1', this.user, 'js-tests'].join('/'),
+      url: ['https://eu-central-1.saucelabs.com/rest/v1', this.user, 'js-tests'].join('/'),
       auth: { user: this.user, pass: this.key() },
       json: {
         platforms: [this.platform],
@@ -141,7 +141,7 @@ module.exports = function (grunt) {
       return utils
         .makeRequest({
           method: 'POST',
-          url: ['https://" + saucelabsHost + "/rest/v1', me.user, 'js-tests/status'].join('/'),
+          url: ['https://eu-central-1.saucelabs.com/rest/v1', me.user, 'js-tests/status'].join('/'),
           auth: { user: me.user, pass: me.key() },
           json: { 'js tests': [me.taskId] }
         })
@@ -182,7 +182,7 @@ module.exports = function (grunt) {
   Job.prototype.stop = function () {
     return utils.makeRequest({
       method: 'PUT',
-      url: ['https://' + saucelabsHost + '/rest/v1', this.user, 'jobs', this.id, 'stop'].join('/'),
+      url: ['https://eu-central-1.saucelabs.com/rest/v1', this.user, 'jobs', this.id, 'stop'].join('/'),
       auth: { user: this.user, pass: this.key() }
     });
   };
@@ -196,7 +196,7 @@ module.exports = function (grunt) {
   Job.prototype.del = function () {
     return utils.makeRequest({
       method: 'DELETE',
-      url: ['https://' + saucelabsHost + '/rest/v1', this.user, 'jobs', this.id].join('/'),
+      url: ['https://eu-central-1.saucelabs.com/rest/v1', this.user, 'jobs', this.id].join('/'),
       auth: { user: this.user, pass: this.key() }
     });
   };
